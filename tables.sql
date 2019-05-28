@@ -346,12 +346,12 @@ VALUES
     (4,'504','16',160,'','Closing stock - Total','NUMERIC',current_user, Now()),
     (4,'00','17',170,'','Brick type','NUMERIC',current_user, Now()),
     (4,'145','18',180,'','New works brought into use since date of last return','TICKBOX-YESNO',current_user, Now()),
-    (4,'146','19',190,'','Remarks','TICKBOX-YESNO',current_user, Now());
+    (4,'146','19',190,'','Remarks','TICKBOX-YESNO',current_user, Now()),
     (4,'700','11',110,'','Derived Total 1','Numeric',current_user, Now()),
     (4,'701','12',120,'','Derived Total 2','Numeric',current_user, Now()),
     (4,'702','13',130,'','Derived Total 3','Numeric',current_user, Now()),
     (4,'703','14',140,'','Derived Total 4','Numeric',current_user, Now()),
-    (4,'704','15',150,'','Derived Total 5','Numeric',current_user, Now()),
+    (4,'704','15',150,'','Derived Total 5','Numeric',current_user, Now());
 
 
 Delete From dev01.Question;
@@ -373,6 +373,11 @@ Values
     ('066','608',current_user, Now()),
     ('066','147',current_user, Now()),
     ('066','146',current_user, Now()),
+    ('066','700',current_user, Now()),
+    ('066','701',current_user, Now()),
+    ('066','702',current_user, Now()),
+    ('066','702',current_user, Now()),
+    ('066','704',current_user, Now()),
     ('076','601',current_user, Now()),
     ('076','602',current_user, Now()),
     ('076','603',current_user, Now()),

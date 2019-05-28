@@ -376,7 +376,7 @@ Values
     ('066','700',current_user, Now()),
     ('066','701',current_user, Now()),
     ('066','702',current_user, Now()),
-    ('066','702',current_user, Now()),
+    ('066','703',current_user, Now()),
     ('066','704',current_user, Now()),
     ('076','601',current_user, Now()),
     ('076','602',current_user, Now()),
@@ -401,6 +401,11 @@ Values
     ('076','123',current_user, Now()),
     ('076','124',current_user, Now()),
     ('076','145',current_user, Now()),
+    ('076','700',current_user, Now()),
+    ('076','701',current_user, Now()),
+    ('076','702',current_user, Now()),
+    ('076','703',current_user, Now()),
+    ('076','704',current_user, Now()),
     ('073','101',current_user, Now()),
     ('073','102',current_user, Now()),
     ('073','103',current_user, Now()),
@@ -425,6 +430,11 @@ Values
     ('073','603',current_user, Now()),
     ('073','602',current_user, Now()),
     ('073','601',current_user, Now()),
+    ('073','700',current_user, Now()),
+    ('073','701',current_user, Now()),
+    ('073','702',current_user, Now()),
+    ('073','703',current_user, Now()),
+    ('073','704',current_user, Now()),
     ('074','01',current_user, Now()),
     ('074','11',current_user, Now()),
     ('074','21',current_user, Now()),
@@ -443,7 +453,12 @@ Values
     ('074','504',current_user, Now()),
     ('074','00',current_user, Now()),
     ('074','145',current_user, Now()),
-    ('074','146',current_user, Now());
+    ('074','146',current_user, Now()),
+    ('074','700',current_user, Now()),
+    ('074','701',current_user, Now()),
+    ('074','702',current_user, Now()),
+    ('074','703',current_user, Now()),
+    ('074','704',current_user, Now());
 
 
 Insert Into dev01.Contributor

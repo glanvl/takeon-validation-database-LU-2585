@@ -1,23 +1,8 @@
-
-# variable "environment_tag" {}
-# variable "team_tag" {}
-# variable "resource_group" {}
-# variable "server_name" {}
-# variable "database_name" {}
-# variable "user_for_script" {}
-# variable "server_password" {} # Need to secure
-# variable "server_username" {} # Need to secure
-
-# Configure the Microsoft Azure Provider
 provider "aws" {
     region = "eu-west-2"
 }
 
-# data "aws_resource_group" "group" {
-#     name = "${var.resource_group}"
-# }
-
-resource "aws_db_instance" "default" {
+resource "aws_db_instance" "takeon" {
     allocated_storage = 5
     storage_type = "gp2"
     engine = "postgres"
@@ -30,6 +15,31 @@ resource "aws_db_instance" "default" {
     identifier = "validation-database"
     skip_final_snapshot = true
     publicly_accessible = true
-}
 
-#psql --host=validation-database.cyjaepzpx1tk.eu-west-2.rds.amazonaws.com --port=5432 --username=username --password --dbname=validationdb
+
+# Run Scripts to load data from local machine
+# Ensure you have postgres and python installed to do this (+ Python modules)
+# Need environment variables set to run below scripts
+# PGPASSWORD an important one to run psql
+  provisioner "local-exec" {
+    command = "psql --host=validation-database.cyjaepzpx1tk.eu-west-2.rds.amazonaws.com --port=5432 --username --password --dbname=validationdb -a -f tables.sql"
+    environment {
+      # Used by all other scripts
+      PGPASSWORD="${var.DB_password}"
+      PGUSER="${var.DB_username}"
+    }
+  }
+
+  # Load test data into database
+  provisioner "local-exec" {
+    command = "python generateContributors.py"
+  }
+
+  provisioner "local-exec" {
+    command = "psql --host=validation-database.cyjaepzpx1tk.eu-west-2.rds.amazonaws.com --port=5432 --username=${var.DB_username} --password --dbname=validationdb -a -f generateResponses.sql"
+  }
+
+  provisioner "local-exec" {
+    command = "python generateValidationData.py"
+  }
+}

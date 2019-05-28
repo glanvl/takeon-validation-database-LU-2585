@@ -286,6 +286,11 @@ VALUES
     (1,'608','8',80,'','TOTALS','NUMERIC',current_user, Now()),
     (1,'147','9',90,'','New pits or quarries brought into use since date of last return','TICKBOX-YESNO',current_user, Now()),
     (1,'146','10',100,'','Remarks','TICKBOX-YESNO',current_user, Now()),
+    (1,'700','11',110,'','Derived Total 1','Numeric',current_user, Now()),
+    (1,'701','12',120,'','Derived Total 2','Numeric',current_user, Now()),
+    (1,'702','13',130,'','Derived Total 3','Numeric',current_user, Now()),
+    (1,'703','14',140,'','Derived Total 4','Numeric',current_user, Now()),
+    (1,'704','15',150,'','Derived Total 5','Numeric',current_user, Now()),
 
     (2,'601','1',10,'','Sand produced for asphalt (asphalting sand)','NUMERIC',current_user, Now()),
     (2,'602','2',20,'','Sand produced for use in mortar (building or soft sand)','NUMERIC',current_user, Now()),
@@ -297,6 +302,11 @@ VALUES
     (2,'608','8',80,'','TOTALS','NUMERIC',current_user, Now()),
     (2,'148','9',90,'','New pits or quarries brought into use since date of last return','TICKBOX-YESNO',current_user, Now()),
     (2,'146','10',100,'','Remarks','TICKBOX-YESNO',current_user, Now()),
+    (2,'700','11',110,'','Derived Total 1','Numeric',current_user, Now()),
+    (2,'701','12',120,'','Derived Total 2','Numeric',current_user, Now()),
+    (2,'702','13',130,'','Derived Total 3','Numeric',current_user, Now()),
+    (2,'703','14',140,'','Derived Total 4','Numeric',current_user, Now()),
+    (2,'704','15',150,'','Derived Total 5','Numeric',current_user, Now()),
 
     (3,'101','1',10,'','Dense Aggregate - Opening stock','NUMERIC',current_user, Now()),
     (3,'102','2',20,'','Dense Aggregate - Total production during month','NUMERIC',current_user, Now()),
@@ -312,6 +322,11 @@ VALUES
     (3,'124','12',120,'','Aerated - Closing stock','NUMERIC',current_user, Now()),
     (3,'145','13',130,'','New works brought into use since date of last return','TICKBOX-YESNO',current_user, Now()),
     (3,'146','14',140,'','Remarks','TICKBOX-YESNO',current_user, Now()),
+    (3,'700','11',110,'','Derived Total 1','Numeric',current_user, Now()),
+    (3,'701','12',120,'','Derived Total 2','Numeric',current_user, Now()),
+    (3,'702','13',130,'','Derived Total 3','Numeric',current_user, Now()),
+    (3,'703','14',140,'','Derived Total 4','Numeric',current_user, Now()),
+    (3,'704','15',150,'','Derived Total 5','Numeric',current_user, Now()),
 
     (4,'01','1',10,'','Opening Stock - Commons','NUMERIC',current_user, Now()),
     (4,'11','2',20,'','Opening Stock - Facings','NUMERIC',current_user, Now()),
@@ -332,6 +347,11 @@ VALUES
     (4,'00','17',170,'','Brick type','NUMERIC',current_user, Now()),
     (4,'145','18',180,'','New works brought into use since date of last return','TICKBOX-YESNO',current_user, Now()),
     (4,'146','19',190,'','Remarks','TICKBOX-YESNO',current_user, Now());
+    (4,'700','11',110,'','Derived Total 1','Numeric',current_user, Now()),
+    (4,'701','12',120,'','Derived Total 2','Numeric',current_user, Now()),
+    (4,'702','13',130,'','Derived Total 3','Numeric',current_user, Now()),
+    (4,'703','14',140,'','Derived Total 4','Numeric',current_user, Now()),
+    (4,'704','15',150,'','Derived Total 5','Numeric',current_user, Now()),
 
 
 Delete From dev01.Question;

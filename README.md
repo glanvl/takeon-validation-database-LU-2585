@@ -1,5 +1,5 @@
 # takeon-terraform
-Inital Azure Terraform script for Postgresql Database 
+Inital AWS Terraform script for Postgresql Database 
 
 # Installing and Setting up Terraform
 1. To install Terraform, find the appropriate package for your system and download it. Terraform is packaged as a zip archive.
@@ -8,12 +8,7 @@ After downloading Terraform, unzip the package. Terraform runs as a single binar
 
 The final step is to make sure that the terraform binary is available on the PATH. See this page for instructions on setting the PATH on Linux and Mac. This page contains instructions for setting the PATH on Windows.
 
-2. Get the required credentials from Azure:
-
-* subscription_id       = 
-* client_id             = 
-* client_secret         = 
-* tenant_id             = 
+2. Configure AWS CLI with your user credentials
 
 
 # Running Terraform

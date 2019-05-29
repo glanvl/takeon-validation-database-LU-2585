@@ -16,13 +16,12 @@ resource "aws_db_instance" "takeon" {
     skip_final_snapshot = true
     publicly_accessible = true
 
+}
 
-# Run Scripts to load data from local machine
-# Ensure you have postgres and python installed to do this (+ Python modules)
-# Need environment variables set to run below scripts
-# PGPASSWORD an important one to run psql
+resource "null_resource" "takeon" {
+
   provisioner "local-exec" {
-    command = "psql --host=validation-database.cyjaepzpx1tk.eu-west-2.rds.amazonaws.com --port=5432 --username --password --dbname=validationdb -a -f tables.sql"
+    command = "psql --host=validation-database.cyjaepzpx1tk.eu-west-2.rds.amazonaws.com --port=5432 --username=${var.DB_username} --password --dbname=validationdb -a -f tables.sql"
     environment = {
       # Used by all other scripts
       password="${var.DB_password}"
@@ -36,10 +35,12 @@ resource "aws_db_instance" "takeon" {
   }
 
   provisioner "local-exec" {
-    command = "psql --host=validation-database.cyjaepzpx1tk.eu-west-2.rds.amazonaws.com --port=5432 --username --password --dbname=validationdb -a -f generateResponses.sql"
+    command = "psql --host=validation-database.cyjaepzpx1tk.eu-west-2.rds.amazonaws.com --port=5432 --username=${var.DB_username} --password --dbname=validationdb -a -f generateResponses.sql"
   }
 
   provisioner "local-exec" {
     command = "python generateValidationData.py"
   }
+
+  depends_on = [aws_db_instance.takeon]
 }

@@ -23,10 +23,10 @@ resource "aws_db_instance" "takeon" {
 # PGPASSWORD an important one to run psql
   provisioner "local-exec" {
     command = "psql --host=validation-database.cyjaepzpx1tk.eu-west-2.rds.amazonaws.com --port=5432 --username --password --dbname=validationdb -a -f tables.sql"
-    environment {
+    environment = {
       # Used by all other scripts
-      PGPASSWORD="${var.DB_password}"
-      PGUSER="${var.DB_username}"
+      password="${var.DB_password}"
+      username="${var.DB_username}"
     }
   }
 
@@ -36,7 +36,7 @@ resource "aws_db_instance" "takeon" {
   }
 
   provisioner "local-exec" {
-    command = "psql --host=validation-database.cyjaepzpx1tk.eu-west-2.rds.amazonaws.com --port=5432 --username=${var.DB_username} --password --dbname=validationdb -a -f generateResponses.sql"
+    command = "psql --host=validation-database.cyjaepzpx1tk.eu-west-2.rds.amazonaws.com --port=5432 --username --password --dbname=validationdb -a -f generateResponses.sql"
   }
 
   provisioner "local-exec" {

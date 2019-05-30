@@ -1,8 +1,5 @@
 #!/bin/bash
-if [ "$#" -eq 0 ]; then
-    echo "Usage: load_data.sh <username> <password>"
-    exit
-elif [ "$#" -ne 2 ]; then
+if [ "$#" -ne 2 ]; then
    echo "Illegal number of parameters. Usage: load_data.sh <username> <password>"
     exit
 else

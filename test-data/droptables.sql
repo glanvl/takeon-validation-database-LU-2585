@@ -13,3 +13,4 @@ Drop table dev01.Question CASCADE;
 Drop table dev01.FormDefinition CASCADE;
 Drop table dev01.Form CASCADE;
 Drop table dev01.Contributor CASCADE;
+Drop schema dev01;

@@ -241,7 +241,7 @@ Values
 
 
 Delete From dev01.Form
-Where   dev01.FormID In (1,2,3,4);
+Where FormID In (1,2,3,4);
 
 Insert Into dev01.Form
 (
@@ -260,7 +260,7 @@ VALUES
     (4,'074','Monthly Survey of Building Materials - Bricks', '200901','999912', current_user, Now());
 
 Delete From dev01.FormDefinition
-Where dev01.FormID In (1,2,3,4);
+Where FormID In (1,2,3,4);
 
 
 Insert Into dev01.FormDefinition

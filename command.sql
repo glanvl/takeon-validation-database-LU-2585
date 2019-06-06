@@ -1,0 +1,1 @@
+SELECT * FROM es_db_test.class;

@@ -1,1 +1,1 @@
-SELECT * FROM es_db_test.class;
+SELECT * FROM es_db_test.Survey_Contact;

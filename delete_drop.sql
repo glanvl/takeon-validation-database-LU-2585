@@ -1,3 +1,6 @@
+delete from es_db_test.GOR_Regions;
+delete from es_db_test.SSR_Old_Regions;
+delete from es_db_test.Survey;
 delete from es_db_test.Failed_VET;
 delete from es_db_test.Question_Anomaly;
 delete from es_db_test.VET;
@@ -15,6 +18,9 @@ delete from es_db_test.Survey_Period;
 delete from es_db_test.Survey;
 delete from es_db_test.Query_Type;
 
+drop table es_db_test.SSR_Old_Regions;
+drop table es_db_test.GOR_Regions;
+drop table es_db_test.Survey;
 drop table es_db_test.Failed_VET;
 drop table es_db_test.Question_Anomaly;
 drop table es_db_test.VET;

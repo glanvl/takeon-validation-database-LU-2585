@@ -6,7 +6,13 @@ Create table es_db_test.Contributor
 (
     ParentRUReference            varchar (11) not null,   /* Enterprise reference? */
     RUReference                  varchar(11) not null,
-    Address                      varchar(255) Not Null,
+    HouseNameNo                  varchar(50) not null,
+    Street                       varchar(100) not null,
+    AddressLine2                 varchar(100),
+    TownCity                     varchar(60) not null,
+    County                       varchar(50) not null,
+    Country                      varchar(55),
+    Postcode                     varchar(9) not null,
     BirthDate                    date Not Null,
     BusinessProfilingTeamCase    boolean Not Null,
     Contact                      varchar(255) Not Null,
@@ -86,7 +92,13 @@ Create table es_db_test.Contributor_Survey_Period
 Create table es_db_test.Contact
 (
     ContactReference              Varchar(25) primary key,
-    ContactAddress                text,
+    HouseNameNo                   varchar(50) not null,
+    Street                        varchar(100) not null,
+    AddressLine2                  varchar(100),
+    TownCity                      varchar(60) not null,
+    County                        varchar(50) not null,
+    Country                       varchar(55),
+    Postcode                      varchar(9) not null,
     ContactConstraints            text,
     ContactEmail                  varchar(255),
     ContactFax                    varchar(25),
@@ -113,20 +125,20 @@ Create table es_db_test.Survey_Contact
 
 Create table es_db_test.Query_Type
 (
-    QueryType           varchar(11) primary key,
+    QueryType           varchar(25) primary key,
     Description         varchar(255)
 );
 
 Create table es_db_test.Query
 (
     QueryReference         varchar(25)not null,
-    QueryType              varchar (11)not null,
+    QueryType              varchar (25)not null,
     RUReference            varchar(11)not null,
     SurveyOutputCode       varchar(25)not null,
     PeriodQueryRelates     varchar(25) not null,
     CurrentPeriod          varchar(6) Not Null,
     RunReference           int,
-    DateTimeRaised         date,
+    DateTimeRaised         varchar(25),
     GeneralSpecificFlag    boolean,
     IndustryGroup          varchar(255),
     LastQueryUpdate        date,
@@ -169,13 +181,13 @@ Create table es_db_test.Query_Task
 
 );
 
-Create table es_db_test.QueryTaskUpdate
+Create table es_db_test.Query_Task_Update
 (
     TaskSeqNo                  int,
     QueryReference             varchar(25),
     LastUpdated                date,
     TaskUpdateDescription      varchar(255),
-    UpdatedBy                  int,
+    UpdatedBy                  varchar(50),
 
     primary key (TaskSeqNo,QueryReference,LastUpdated),
     foreign key (TaskSeqNo, QueryReference) references es_db_test.Query_Task(TaskSeqNo,QueryReference)
